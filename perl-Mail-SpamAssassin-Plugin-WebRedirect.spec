@@ -1,13 +1,12 @@
 Summary:	The WebRedirect plugin for SpamAssassin
 Name:		perl-Mail-SpamAssassin-Plugin-WebRedirect
 Version:	0
-Release:	%mkrel 2
+Release:	%mkrel 3
 License:	Apache License
 Group:		Development/Perl
 URL:		http://people.apache.org/~dos/sa-plugins/3.1/
-Source0:	http://people.apache.org/~dos/sa-plugins/3.1/WebRedirect.cf.bz2
-Source1:	http://people.apache.org/~dos/sa-plugins/3.1/WebRedirect.pm.bz2
-Patch0:		WebRedirect-fix-module-path.patch
+Source0:	http://people.apache.org/~dos/sa-plugins/3.1/WebRedirect.cf
+Source1:	http://people.apache.org/~dos/sa-plugins/3.1/WebRedirect.pm
 Requires(pre): rpm-helper
 Requires(postun): rpm-helper
 Requires(pre):  spamassassin-spamd >= 3.1.1
@@ -30,10 +29,11 @@ custom header rules.
 
 %setup -q -T -c -n %{name}-%{version}
 
-bzcat %{SOURCE0} > WebRedirect.cf
-bzcat %{SOURCE1} > WebRedirect.pm
+cp %{SOURCE0} WebRedirect.cf
+cp %{SOURCE1} WebRedirect.pm
 
-%patch0
+# fix path
+perl -pi -e "s|/etc/mail/spamassassin/WebRedirect\.pm|%{perl_vendorlib}/Mail/SpamAssassin/Plugin/WebRedirect\.pm|g" WebRedirect.cf
 
 %build
 
@@ -70,5 +70,3 @@ fi
 %attr(0644,root,root) %config(noreplace) %{_sysconfdir}/mail/spamassassin/WebRedirect.cf
 %{perl_vendorlib}/Mail/SpamAssassin/Plugin/WebRedirect.pm
 %{_mandir}/man3/Mail::SpamAssassin::Plugin::WebRedirect.3pm*
-
-
