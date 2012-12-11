@@ -70,3 +70,30 @@ fi
 %attr(0644,root,root) %config(noreplace) %{_sysconfdir}/mail/spamassassin/WebRedirect.cf
 %{perl_vendorlib}/Mail/SpamAssassin/Plugin/WebRedirect.pm
 %{_mandir}/man3/Mail::SpamAssassin::Plugin::WebRedirect.3pm*
+
+
+%changelog
+* Fri Sep 04 2009 Thierry Vignaud <tvignaud@mandriva.com> 0-5mdv2010.0
++ Revision: 430496
+- rebuild
+
+* Sun Jul 20 2008 Oden Eriksson <oeriksson@mandriva.com> 0-4mdv2009.0
++ Revision: 239111
+- rebuild
+
+  + Olivier Blin <oblin@mandriva.com>
+    - restore BuildRoot
+
+  + Thierry Vignaud <tvignaud@mandriva.com>
+    - kill re-definition of %%buildroot on Pixel's request
+
+* Sun Jul 01 2007 Oden Eriksson <oeriksson@mandriva.com> 0-3mdv2008.0
++ Revision: 46366
+- misc fixes
+
+
+* Sat Nov 25 2006 Emmanuel Andry <eandry@mandriva.org> 0-2mdv2007.0
++ Revision: 87293
+- patch to fix perl module path
+- Import perl-Mail-SpamAssassin-Plugin-WebRedirect
+
