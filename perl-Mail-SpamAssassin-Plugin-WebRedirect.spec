@@ -1,7 +1,7 @@
 Summary:	The WebRedirect plugin for SpamAssassin
 Name:		perl-Mail-SpamAssassin-Plugin-WebRedirect
 Version:	0
-Release:	6
+Release:	7
 License:	Apache License
 Group:		Development/Perl
 URL:		http://people.apache.org/~dos/sa-plugins/3.1/
