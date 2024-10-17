@@ -4,7 +4,7 @@ Version:	0
 Release:	7
 License:	Apache License
 Group:		Development/Perl
-URL:		http://people.apache.org/~dos/sa-plugins/3.1/
+URL:		https://people.apache.org/~dos/sa-plugins/3.1/
 Source0:	http://people.apache.org/~dos/sa-plugins/3.1/WebRedirect.cf
 Source1:	http://people.apache.org/~dos/sa-plugins/3.1/WebRedirect.pm
 Requires(pre): rpm-helper
